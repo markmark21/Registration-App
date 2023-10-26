@@ -2,10 +2,11 @@ import React from 'react';
 import Layout from "../../components/layout/Layout";
 import {Card, Form, Row, Space, Typography} from "antd";
 import CustomInput from "../../components/custom-input/CustomInput";
-import PasswordInput from "../../components/password-input/PasswordInput";
+
 import CustomButton from "../../components/custom-button/CustomButton";
 import {Link} from "react-router-dom";
 import {Paths} from "../../path";
+import {PasswordInput} from "../../components/password-input/PasswordInput";
 
 const Login = () => {
     return (
