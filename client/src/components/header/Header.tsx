@@ -1,6 +1,6 @@
 import s from './Header.module.css'
 import {Button, Layout, Space, Typography} from "antd";
-import {TeamOutlined} from "@ant-design/icons";
+import {LoginOutlined, TeamOutlined, UserOutlined} from "@ant-design/icons";
 import CustomButton from "../custom-button/CustomButton";
 import {Link} from "react-router-dom";
 import {Paths} from "../../path";
@@ -19,12 +19,12 @@ const Header = () => {
                 </Space>
                 <Space>
                     <Link to={Paths.register}>
-                        <CustomButton type={'ghost'}>
+                        <CustomButton type={'ghost'} icon={ <UserOutlined/> }>
                             Зарегистрировать
                         </CustomButton>
                     </Link>
                     <Link to={Paths.login}>
-                        <CustomButton type={'ghost'}>
+                        <CustomButton type={'ghost'} icon={<LoginOutlined/>}>
                             Войти
                         </CustomButton>
                     </Link>
