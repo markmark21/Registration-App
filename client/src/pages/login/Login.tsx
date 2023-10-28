@@ -7,14 +7,25 @@ import CustomButton from "../../components/custom-button/CustomButton";
 import {Link} from "react-router-dom";
 import {Paths} from "../../path";
 import {PasswordInput} from "../../components/password-input/PasswordInput";
+import {useLoginMutation, UserData} from "../../app/services/auth";
 
 const Login = () => {
+    const [loginUser, loginUserResult] = useLoginMutation()
+
+    const login = async (data: UserData) => {
+        try {
+            await loginUser(data).unwrap()
+        } catch(err) {
+
+        }
+    }
+
     return (
         <div>
             <Layout>
                 <Row align={'middle'} justify={'center'}>
                     <Card title={'Войдите'} style={{width: "30rem"}}>
-                        <Form onFinish={() => null}>
+                        <Form onFinish={login}>
                             <CustomInput placeholder='Email' name='email' type='email'/>
                             <PasswordInput name='password' placeholder='Пароль'/>
                             <CustomButton type='primary' htmlType='submit'>
